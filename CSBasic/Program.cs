@@ -31,6 +31,73 @@ namespace CSBasic
             Console.Write("");
             Console.WriteLine("개행이 되는 출력");
 
+            Console.WriteLine(52);
+            // Arithmetic Operator +  - *
+            Console.WriteLine(52 + 273);
+            // Operator Priority
+            Console.WriteLine(52 + 3 * 2);
+
+            Console.WriteLine(10 / 5);
+            Console.WriteLine(10 % 5);
+            Console.WriteLine(7%3);
+
+            // Real Number
+            Console.WriteLine(52.273);
+            Console.WriteLine(0);
+            Console.WriteLine(0.0);
+
+
+            Console.WriteLine(1.0 + 2.0);
+            Console.WriteLine(1.0 - 2.0);
+            Console.WriteLine(1.0 * 2.0);
+            Console.WriteLine(1.0 / 2.0);
+            Console.WriteLine(1 / 2);
+            Console.WriteLine(1 / 2.0);
+
+            Console.WriteLine('A');
+            Console.WriteLine('가');
+            //Console.WriteLine('AB');
+
+            Console.WriteLine("AB");
+
+            Console.WriteLine("미림\t여자정보\t과학고");
+            Console.WriteLine("미림여자정보과학고\t안녕");
+            Console.WriteLine("미림\t여자정보\t과학고");
+            Console.WriteLine("미림여\t자정보\t과학고");
+            Console.WriteLine("미\t여자정보과학고\t안녕");
+            Console.WriteLine("\\역슬래시 \n 엔터문자 \"큰 따옴표");
+
+            // 문자열 연결 연산자 Concatenation Operator
+            Console.WriteLine("A" + "B");
+            Console.WriteLine("A" + 1);
+            Console.WriteLine(1 + "A");
+            Console.WriteLine("1" + "1");
+            Console.WriteLine('A' + 'B');
+            Console.WriteLine('A' - 'B');
+            //Console.WriteLine("A" - "B"); --> 에러 
+
+            Console.WriteLine("안녕하세요!"[0]);
+            Console.WriteLine("안녕하세요!"[1]);
+            Console.WriteLine("안녕하세요!"[2]);
+            Console.WriteLine("안녕하세요!"[3]);
+            //Console.WriteLine("안녕하세요!"[100]);
+            //Console.WriteLine("안녕하세요!"[-1]);
+
+
+            // bool / boolean
+            Console.WriteLine(true); //True 대문자로 출력
+            Console.WriteLine(false); //False 대문자로 출력
+
+
+            // Comparison operator
+            // == != > < >= <= 
+            // => =< <-- 안됨
+
+            Console.WriteLine(62 < 273);
+
+            Console.WriteLine(DateTime.Now.Hour < 3 || 8 < DateTime.Now.Hour);
+            Console.WriteLine(DateTime.Now.Hour > 3 && 8 > DateTime.Now.Hour);
+
         }
     }
 }
