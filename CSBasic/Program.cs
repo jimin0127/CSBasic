@@ -25,6 +25,12 @@ namespace CSBasic
               여러줄 주석
              */
 
+
+            //출력
+            Console.Write("개행이 안되는 출력\n");
+            Console.Write("");
+            Console.WriteLine("개행이 되는 출력");
+
         }
     }
 }
