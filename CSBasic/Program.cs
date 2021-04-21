@@ -178,17 +178,107 @@ namespace CSBasic
 
             string input = Console.ReadLine();
             Console.WriteLine("input:" + input);
-            while (true)
+            /* while (true)
+             {
+                 input = Console.ReadLine(); // enter는 제거 
+                 if(input != "q")
+                 {
+                     Console.WriteLine(input);
+                 }else
+                 {
+                     break;
+                 }
+             }*/
+
+            //강제 형변환
+            //long longNumber = 2147483647L + 2147483647L;
+            long longNumber = 100;
+            int intNumber =(int) longNumber;
+            Console.WriteLine(intNumber);
+
+            //자동 형변환
+            intNumber = 100;
+            longNumber = intNumber;
+            Console.WriteLine(longNumber);
+
+            // int -> long, float, double;
+            // long -> float, double
+            // char -> int, long, float, double
+            // flaot -> double
+
+            //Widening Casting 자동 형변환
+            //byte -> short -> char -> int -> long -> flat -> double
+
+            // Narrowing Casting 강제 형변환
+            // double -> flaot -> long -> int -> char-> short -> byte
+
+            // int.Parse() / long.Parse()
+            //flaot.Parse() / double.Parse()
+            string numberString = "52273";
+            //intNumber = (int)numberString;
+            intNumber = int.Parse(numberString);
+            Console.WriteLine(intNumber);
+
+         
+
+            try
             {
-                input = Console.ReadLine(); // enter는 제거 
-                if(input != "q")
-                {
-                    Console.WriteLine(input);
-                }else
-                {
-                    break;
-                }
+                Console.WriteLine(int.Parse("52.273"));
+                Console.WriteLine(int.Parse("오십일"));
+                Console.WriteLine(int.Parse("Seven"));
             }
+            catch(FormatException e)
+            {
+                Console.WriteLine("숫자로변경할 수없습니다. ");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("알 수 없는 오류 : " + e.Message);
+            }
+
+
+            // 다른 자료형을 문자열로 변환
+            Console.WriteLine((10).ToString());
+            Console.WriteLine((52.234).ToString());
+            Console.WriteLine(('a').ToString());
+            Console.WriteLine((true).ToString());
+            Console.WriteLine((false).ToString());
+
+            double number2 = 52.273103;
+            Console.WriteLine(number2.ToString("0.0"));
+            Console.WriteLine(number2.ToString("0.00"));
+            Console.WriteLine(number2.ToString("0.000"));
+            Console.WriteLine(number2.ToString("0.0000"));
+            //반올림 해서 출력
+
+            Console.WriteLine(52 + "");
+            Console.WriteLine(52 + 3 + ""); //"55"
+            Console.WriteLine("" + 52 + 3); //"523"
+            Console.WriteLine(52 + "" + 3); //앞에서 부터 연산
+
+            number = 273;
+            string ouputA = number + "";
+            Console.WriteLine(number);
+
+            char ch = 'a';
+            string outputB = ch + "";
+            Console.WriteLine(outputB);
+
+            //문자열을 bool 타입으로 
+            Console.WriteLine(bool.Parse("True"));
+            Console.WriteLine(bool.Parse("true"));
+            Console.WriteLine(bool.Parse("trUe"));
+            Console.WriteLine(bool.Parse("False"));
+            Console.WriteLine(bool.Parse("false"));
+
+            Console.WriteLine(int.MaxValue);
+            Console.WriteLine(int.MinValue);
+
+            //최댓값 최솟값은 상수로
+            Console.WriteLine(-1 * int.MaxValue);
+            //Console.WriteLine(-1 * int.MinValue);
+            Console.WriteLine(-1L * int.MinValue);
+            
         }
     }
 }
