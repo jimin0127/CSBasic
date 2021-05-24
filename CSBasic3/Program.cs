@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CSBasic3
@@ -90,7 +91,59 @@ namespace CSBasic3
                 }
                 Console.Write('\n');
             }
-            
+
+
+
+            string inputString = "Potato Tomato";
+            inputString.ToUpper();
+            Console.WriteLine(inputString);
+            Console.WriteLine(inputString.ToLower()); // C#에서 String 관련 함수들은 원본을 건들지 않는다. 복사해서 반환
+            Console.WriteLine(inputString);
+
+
+            string foodString = "감자 고구마 토마토 치킨";
+            string[] foods = foodString.Split(new char[] { ' ' });
+            foreach(var food in foods)
+            {
+                Console.WriteLine(food);
+            }
+
+            string pathString = "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python27;C:\\Python27\\Scripts;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Git\\cmd;C:\\Users\\ckdgh\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Python 3.7;C:\\Bitnami\\wampstack-7.4.8-0\\mysql\\bin;C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\;%SYSTEMROOT%\\System32\\OpenSSH\\;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\cassandra\\apache-cassandra-3.11.10\\bin;C:\\Program Files\\Java\\jdk1.8.0_241\\bin;";
+            string[] paths = pathString.Split(new char[] { ';' });
+            foreach(var path in paths)
+            {
+                Console.WriteLine(path);
+            }
+
+            string StrangeInput = "   text \n            \n";
+            Console.WriteLine("[" + StrangeInput + "]");
+            Console.WriteLine("[" + StrangeInput.Trim() + "]");
+
+            string[] foodsArray = { "감자", "고구마", "토마토" };
+            Console.WriteLine(string.Join(", ", foodsArray));
+
+            Console.Clear();
+            Console.WriteLine("포맷 중 :  0% [__________]");
+
+            for (int f = 0; f < 10; f++)
+            {
+
+                Console.SetCursorPosition(0, 0);
+                Console.Write("포맷 중 : ");
+                Console.Write((f + 1) * 10 + "%[");
+                for (int f2 = 0; f2 < f; f2++)
+                    Console.Write("#");
+                for (int f2 = f + 1; f2 < 10; f2++)
+                    Console.Write("_");
+                Console.WriteLine("]");
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(3000);
+
+
         }
+
+
+
     }
 }
