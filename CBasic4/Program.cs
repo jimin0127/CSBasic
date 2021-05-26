@@ -6,6 +6,26 @@ using System.Threading.Tasks;
 
 namespace CBasic4
 {
+    class MyMath
+    {
+        public int a; 
+        public static double PI = 3.141592;
+        public static void Hello()
+        {
+            //a = 3;
+            Console.WriteLine("Greeting~");
+        }
+    }
+    class Product
+    {
+        public string name = "default";
+        public int price = 1000;
+
+        public override string ToString()
+        {
+            return this.name + " / " + this.price;
+        }
+    }
 
     class Car
     {
@@ -70,6 +90,15 @@ namespace CBasic4
             Console.WriteLine(Math.Round(52.273));
 
             Product product = new Product();
+            Console.WriteLine(product);
+            Product productA = new Product() { name = "감자", price = 20000 };
+            Console.WriteLine(productA);
+            Product productB = new Product() { name = "고구마", price = 3000 };
+            Console.WriteLine(productB);
+
+            // static 변수는 인스턴스를 생성하지 않고 사용할 수 있다. 
+            Console.WriteLine(MyMath.PI);
+            MyMath.Hello();
 
         }
     }
