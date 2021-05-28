@@ -120,6 +120,37 @@ namespace CBasic4
                 new Student() { name = "함기훈", favorityFood = "밀크티" }
             };
 
+            foreach(var item in students)
+            {
+                Console.WriteLine(item.name + " : " + item.grade);
+            }
+            for(int i = 0; i < students.Count; i++)
+            {
+                /*if(students[i].grade > 0)
+                {
+                    students.RemoveAt(i); //인덱스가 하나씩 밀린다 제대로 삭제 되지 않음
+                }*/
+                
+                /*if (students[i].grade > 0)
+                {
+                    students.RemoveAt(i); 
+                    i--;
+                }*/
+            }
+
+            for (int i = students.Count - 1; i >= 0; i--)
+            {
+                if (students[i].grade > 0)
+                {
+                    students.RemoveAt(i);
+                }
+            }
+                
+            foreach (var item in students)
+            {
+                Console.WriteLine(item.name + " : " + item.grade);
+            }
+
         }
     }
 
