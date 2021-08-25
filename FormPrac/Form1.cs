@@ -12,14 +12,57 @@ namespace FormPrac
 {
     public partial class Form1 : Form
     {
+        enum OrderState { Ordered, Paymented, Prepared, Sended };
+        enum SOurse { NewmediaSoftware, NewmeidaWebsolution, NewmediaDisign };
+        enum CFood { 짜장면, 짬뽕, 볶음밥 };
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMessageBox1_Click(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
+            DialogResult result = 
+            if (btn == btnMessageBox1)
+            {
+                result = MessageBox.Show("안녕하세요~");
+            }
+            else if (btn == btnMessageBox2)
+            {
+                result = MessageBox.Show("안녕하세요~", "격하게 환영인사");
+            }
+            else if (btn == btnMessageBox3)
+            {
+                result = MessageBox.Show("안녕하세요~", "격하게 환영인사",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
+            }
+            switch (result)
+            {
+                case DialogResult.OK:
+                    MessageBox.Show("나도 반가워요~");
+                    break;
+                case DialogResult.Cancel:
+                    MessageBox.Show("나도 안반가워요");
+                    break;
+            }
 
+
+        }
+
+        private void btnModaless_Click(object sender, EventArgs e)
+        {
+            Form form = new FormCustom();
+            if(sender == btnModaless)
+            {
+                form.Show();
+
+            }else if (sender == btnModal)
+            {
+                form.ShowDialog();
+            }
         }
     }
 }
