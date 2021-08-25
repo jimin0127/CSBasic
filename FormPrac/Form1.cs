@@ -24,7 +24,7 @@ namespace FormPrac
         private void btnMessageBox1_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            DialogResult result = 
+            DialogResult result = DialogResult.None; 
             if (btn == btnMessageBox1)
             {
                 result = MessageBox.Show("안녕하세요~");
