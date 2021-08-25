@@ -57,9 +57,11 @@ namespace FormPrac
             Form form = new FormCustom();
             if(sender == btnModaless)
             {
+                form.MdiParent = this;
                 form.Show();
 
-            }else if (sender == btnModal)
+            }
+            else if (sender == btnModal)
             {
                 form.ShowDialog();
             }
